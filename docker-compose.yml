@@ -1,0 +1,12 @@
+services:
+  imbusshiny:
+    build:
+      context: .
+    user: shiny
+    restart: unless-stopped
+    ports:
+      - 3840:3838
+    volumes:
+      - ./OnSurveyConLogo/:/srv/shiny-server/OnSurveyConLogo/:ro
+      - ./SelectAndFilter_from_DATRAS/:/srv/shiny-server/SelectAndFilter_from_DATRAS/:ro
+      - ./Three_variables_vs_depth/:/srv/shiny-server/Three_variables_vs_depth/:ro
